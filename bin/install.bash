@@ -20,30 +20,22 @@ $(hostname) $0 $@
 projectRoot=$(realpath ./../../../../)
 cd $projectRoot;
 
-if [[ "$(whoami)" != "root" ]]
-then
-    echo "Please run this as root"
-    exit 1
-fi
-
 validatorBinUrl="https://github.com/validator/validator/releases/download/17.9.0/vnu.jar_17.9.0.zip";
 validatorZipTargetPath="$DIR/validator.zip";
-validatorBinTargetPath="$DIR/validator.jar";
+validatorBinTargetPath="$DIR/html.jar";
 
 if [ -n "$(type -t java)" ]
 then
     echo "Java command is available, continuing...";
 else
-    echo "Java not installed, installing Java";
-    yum install java -y;
+    echo "Java not installed, please install Java";
 fi
 
 if [[ -n "$(type -t unzip)" ]]
 then
     echo "Unzip command is available, continuing...";
 else
-    echo "Unzip not installed, installing unip";
-    yum install unzip -y;
+    echo "Unzip not installed, please install unip";
 fi
 
 if [[ ! -f $validatorBinTargetPath ]]
@@ -53,6 +45,7 @@ then
     wget -O $validatorZipTargetPath $validatorBinUrl;
     unzip -o "$validatorZipTargetPath" -d "$DIR";
     mv "$DIR/dist/vnu.jar" "$validatorBinTargetPath";
+    rm -rf "$DIR/dist";
     chown ec:ec "$validatorBinTargetPath"
     echo "
 
