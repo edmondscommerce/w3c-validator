@@ -1,0 +1,31 @@
+{
+    "name": "edmondscommerce/w3c-validator",
+    "license": "MIT",
+    "type": "library",
+    "description": "PHP Wrapper library around W3C Validator for HTML/CSS",
+    "autoload": {
+        "psr-4": {
+            "EdmondsCommerce\\W3C\\": [
+                "src/"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EdmondsCommerce\\W3C\\Tests": [
+                "tests/"
+            ]
+        }
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.9"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "secure-http": false,
+        "preferred-install": "source",
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
