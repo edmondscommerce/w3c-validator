@@ -11,7 +11,7 @@ Ensure that you have the following system dependencies
 * Unzip
 
 Install using composer.
-Run the `install.bash` command in the `bin` directory
+Run the `w3c-html-install.bash` command in the `bin` directory
 
 To run the validator, instantiate the `EdmondsCommerce\W3C\Html` class and use the available public methods to validate files or fragments.
 The library does not handle resolving a URL but this should not be an issue to work around.
