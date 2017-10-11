@@ -22,11 +22,6 @@ abstract class AbstractValidator implements ValidatorInterface
         {
             throw new W3ValidatorInstallException('Validator does not exist at "' . $path . '"');
         }
-
-        if (!is_executable($path))
-        {
-            throw new W3ValidatorInstallException('Validator is not executable at path "' . $path . '"');
-        }
     }
 
     /**

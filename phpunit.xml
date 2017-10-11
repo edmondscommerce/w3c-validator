@@ -1,0 +1,26 @@
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.2/phpunit.xsd"
+        backupGlobals="true"
+        cacheTokens="false"
+        colors="true"
+        verbose="true"
+        bootstrap="tests/bootstrap.php">
+    <logging>
+        <log type="coverage-html" target="./../../../var/phpunit_coverage"/>
+        <log type="coverage-text" target="php://stdout"/>
+    </logging>
+    <testsuites>
+        <testsuite name="EC W3C Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist
+                addUncoveredFilesFromWhitelist="true"
+                processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+</phpunit>
+
