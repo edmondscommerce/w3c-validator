@@ -37,4 +37,16 @@ class Html extends AbstractValidator implements ValidatorInterface
 
         return $command;
     }
+
+    /**
+     * @param string $inputFile
+     * @return array
+     */
+    protected function runValidatorCommand(string $inputFile):array
+    {
+        $output = parent::runValidatorCommand($inputFile);
+        $output = json_decode(array_shift($output), true);
+
+        return $output['messages'];
+    }
 }

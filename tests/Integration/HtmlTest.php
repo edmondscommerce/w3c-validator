@@ -26,27 +26,27 @@ class HtmlTest extends TestCase
         $result = $this->validator->validateFragment($html);
 
         $this->assertInternalType('array', $result);
-        $this->assertCount(0, $result['messages']);
+        $this->assertCount(0, $result);
     }
 
     public function testItWillValidateHtmlFiles()
     {
-        $html = $this->getHtmlContent('valid.html');
-
-        $result = $this->validator->validateFragment($html);
-
-        $this->assertInternalType('array', $result);
-        $this->assertCount(0, $result['messages']);
-    }
-
-    public function testItWillValidateRawHtmlWithWarnings()
-    {
-        $html = $this->getHtmlContent('warning.html');
+        $html = $this->getHtmlPath('valid.html');
 
         $result = $this->validator->validateFile($html);
 
         $this->assertInternalType('array', $result);
-        $this->assertCount(1, $result['messages']);
+        $this->assertCount(0, $result);
+    }
+
+    public function testItWillValidateRawHtmlWithWarnings()
+    {
+        $html = $this->getHtmlPath('warning.html');
+
+        $result = $this->validator->validateFile($html);
+
+        $this->assertInternalType('array', $result);
+        $this->assertCount(1, $result);
     }
 
     public function testItWillValidateRawHtmlWithErrors()
@@ -56,6 +56,6 @@ class HtmlTest extends TestCase
         $result = $this->validator->validateFile($html);
 
         $this->assertInternalType('array', $result);
-        $this->assertCount(5, $result['messages']);
+        $this->assertCount(5, $result);
     }
 }

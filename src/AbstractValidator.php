@@ -32,11 +32,12 @@ abstract class AbstractValidator implements ValidatorInterface
 
     /**
      * Get the full bash validator command
+     * @param string $inputFile
      * @return string
      */
     protected abstract function getValidatorCommand(string $inputFile): string;
 
-    protected function runValidatorCommand(string $inputFile)
+    protected function runValidatorCommand(string $inputFile):array
     {
         $command = $this->getValidatorCommand($inputFile);
 
