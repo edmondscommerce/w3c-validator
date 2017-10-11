@@ -29,13 +29,15 @@ then
     echo "Java command is available, continuing...";
 else
     echo "Java not installed, please install Java";
+    exit 1;
 fi
 
 if [[ -n "$(type -t unzip)" ]]
 then
     echo "Unzip command is available, continuing...";
 else
-    echo "Unzip not installed, please install unip";
+    echo "Unzip not installed, please install unzip";
+    exit 1;
 fi
 
 if [[ ! -f $validatorBinTargetPath ]]

@@ -55,19 +55,12 @@ abstract class AbstractValidator implements ValidatorInterface
 
 
     /**
-     * Attempt to find the bin directory
+     * Attempt to get the bin directory
      * @return string
      */
     protected function getBinDir(): string
     {
-        $binDir = __DIR__ . '/../bin';
-        if (is_dir($binDir))
-        {
-            return $binDir;
-        }
-
-        //Go up to the project root
-        return __DIR__ . '/../../../../bin';
+        return __DIR__ . '/../bin';
     }
 
 

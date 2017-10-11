@@ -3,3 +3,4 @@ composer.phar
 .idea
 bin
 !bin/w3c-html-install.bash
+bin/html.jar
