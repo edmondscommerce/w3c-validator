@@ -22,7 +22,7 @@
         "mockery/mockery": "^0.9.9"
     },
     "bin": [
-        "bin/install.bash"
+        "bin/w3c-html-install.bash"
     ],
     "config": {
         "bin-dir": "bin",
