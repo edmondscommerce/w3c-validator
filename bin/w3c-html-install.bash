@@ -17,8 +17,8 @@ echo "
 $(hostname) $0 $@
 ===========================================
 "
-projectRoot=$(realpath ./../../../../)
-cd $projectRoot;
+binDir=$(realpath ./)
+cd $binDir;
 
 validatorBinUrl="https://github.com/validator/validator/releases/download/17.9.0/vnu.jar_17.9.0.zip";
 validatorZipTargetPath="$DIR/validator.zip";
