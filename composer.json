@@ -12,7 +12,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "EdmondsCommerce\\W3C\\Tests": [
+            "EdmondsCommerce\\W3C\\Tests\\": [
                 "tests/"
             ]
         }
