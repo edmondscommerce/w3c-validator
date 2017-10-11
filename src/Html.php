@@ -2,10 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Edmonds\GeneralRemoteLint\W3;
-
-use EdmondsCommerce\W3C\AbstractValidator;
-use EdmondsCommerce\W3C\ValidatorInterface;
+namespace EdmondsCommerce\W3C;
 
 class Html extends AbstractValidator implements ValidatorInterface
 {

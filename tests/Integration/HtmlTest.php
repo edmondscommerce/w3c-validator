@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace EdmondsCommerce\W3C\Tests\Integration;
 
-use Edmonds\GeneralRemoteLint\W3\Html;
+use EdmondsCommerce\W3C\Html;
 use EdmondsCommerce\W3C\Tests\TestCase;
 
 class HtmlTest extends TestCase
