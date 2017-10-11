@@ -37,7 +37,7 @@ abstract class AbstractValidator implements ValidatorInterface
      */
     protected abstract function getValidatorCommand(string $inputFile): string;
 
-    protected function runValidatorCommand(string $inputFile):array
+    protected function runValidatorCommand(string $inputFile): array
     {
         $command = $this->getValidatorCommand($inputFile);
 
@@ -52,6 +52,24 @@ abstract class AbstractValidator implements ValidatorInterface
 
         return $output;
     }
+
+
+    /**
+     * Attempt to find the bin directory
+     * @return string
+     */
+    protected function getBinDir(): string
+    {
+        $binDir = __DIR__ . '/../bin';
+        if (is_dir($binDir))
+        {
+            return $binDir;
+        }
+
+        //Go up to the project root
+        return __DIR__ . '/../../../../bin';
+    }
+
 
     public function validateFile(string $inputFile): array
     {

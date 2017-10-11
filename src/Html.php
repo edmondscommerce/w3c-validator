@@ -14,8 +14,7 @@ class Html extends AbstractValidator implements ValidatorInterface
     protected function getValidatorPath(): string
     {
         //Get the bin directory
-        $binDir = __DIR__ . '/../bin';
-        $validatorPath = $binDir . '/html.jar';
+        $validatorPath = $this->getBinDir() . '/html.jar';
 
         return $validatorPath;
     }
@@ -39,7 +38,7 @@ class Html extends AbstractValidator implements ValidatorInterface
      * @param string $inputFile
      * @return array
      */
-    protected function runValidatorCommand(string $inputFile):array
+    protected function runValidatorCommand(string $inputFile): array
     {
         $output = parent::runValidatorCommand($inputFile);
         $output = json_decode(array_shift($output), true);
